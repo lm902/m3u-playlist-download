@@ -24,5 +24,12 @@ namespace M3U8抓视频工具
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new System.Windows.Forms.SaveFileDialog();
+            dialog.ShowDialog();
+            new Download { Url = UrlBox.Text, Location = dialog.FileName }.ShowDialog();
+        }
     }
 }
